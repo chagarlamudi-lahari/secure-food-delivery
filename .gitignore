@@ -1,0 +1,5 @@
+users.db
+monitoring/security_logs.txt
+__pycache__/
+venv/
+.env

@@ -1,0 +1,17 @@
+<h1>Admin Dashboard</h1>
+
+<table border="1">
+<tr>
+  <th>Username</th>
+  <th>Failed Attempts</th>
+  <th>Blocked</th>
+</tr>
+
+{% for user in users %}
+<tr>
+  <td>{{ user[0] }}</td>
+  <td>{{ user[1] }}</td>
+  <td>{{ "YES" if user[2] else "NO" }}</td>
+</tr>
+{% endfor %}
+</table>

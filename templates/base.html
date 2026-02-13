@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Secure Food Delivery{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="security-header">
+    🔒 Secure Session Active | AES Encrypted | MFA Enabled | IDS Monitoring
+</div>
+
+<div class="security-status">
+    <span class="shield">🛡</span> Security Level: HIGH
+</div>
+
+<div class="session-timer">
+    ⏳ Session expires in: <span id="countdown">60</span>s
+</div>
+
+<nav class="navbar">
+    <div class="logo">🍽 SecureEats</div>
+    <div class="nav-links">
+        <a href="/restaurants">Restaurants</a>
+        <a href="/orders">Orders</a>
+        <a href="/login">Login</a>
+    </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="security-footer">
+    🛡 Protected by Intrusion Detection | RBAC | MFA
+</footer>
+
+
+<script>
+let timeoutDuration = 60; // seconds
+let countdownElement = document.getElementById("countdown");
+let timer;
+let countdown;
+
+function startTimer() {
+    let timeLeft = timeoutDuration;
+    countdownElement.textContent = timeLeft;
+
+    countdown = setInterval(() => {
+        timeLeft--;
+        countdownElement.textContent = timeLeft;
+
+        if (timeLeft <= 10) {
+            countdownElement.style.color = "red";
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            logoutUser();
+        }
+    }, 1000);
+}
+
+function resetTimer() {
+    clearTimeout(timer);
+    clearInterval(countdown);
+    countdownElement.style.color = "green";
+    startTimer();
+}
+
+function logoutUser() {
+    alert("Session expired due to inactivity.");
+    window.location.href = "/logout";
+}
+
+document.onload = startTimer;
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
+</script>
+
+
+</body>
+</html>
+

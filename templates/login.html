@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Secure Food Delivery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="security-header">
+    🔐 Secure Session Active | AES Encrypted Data | MFA Enabled | IDS Monitoring Active
+</div>
+
+<h2>🍔 Secure Food Delivery</h2>
+
+<div class="login-box">
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

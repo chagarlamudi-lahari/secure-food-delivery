@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="security-header">
+    🔐 Secure Session Active | AES Encrypted Data | MFA Enabled | IDS Monitoring Active
+</div>
+
+<h2>🔐 OTP Verification</h2>
+
+<div class="login-box">
+    <form method="POST">
+        <input type="text" name="otp" placeholder="Enter OTP" required>
+        <button type="submit">Verify</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}My Orders{% endblock %}
+
+{% block content %}
+
+<h2>🍽 My Orders</h2>
+
+<div class="nav">
+    <a href="/restaurants">Browse Restaurants</a>
+    <a href="/orders">Order History</a>
+    <a href="/payment">Payment</a>
+    <a href="/security-log">Security Log</a>
+    <a href="/logout">Logout</a>
+</div>
+
+
+<div class="card">
+    <p>
+        Welcome, {{ session['user'] }}
+        <span class="secure-badge">🛡 Secure Account</span>
+    </p>
+</div>
+
+{% endblock %}

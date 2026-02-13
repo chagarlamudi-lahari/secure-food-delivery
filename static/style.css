@@ -1,0 +1,323 @@
+/* ===============================
+   GLOBAL
+================================= */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #121212;
+    color: white;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* ===============================
+   SECURITY HEADER
+================================= */
+.security-header {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: #00ffcc;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.security-status {
+    text-align: center;
+    padding: 8px;
+    background: #1b1b1b;
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+.shield {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.session-timer {
+    text-align: center;
+    padding: 8px;
+    background: #1e1e1e;
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #1c1c1c;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff8000;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff8000;
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+
+.hero-left {
+    width: 50%;
+}
+
+.hero-left h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-left p {
+    color: #bbb;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* SEARCH BAR */
+.search-box {
+    display: flex;
+    background: #1e1e1e;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 400px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: transparent;
+    color: white;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.search-box button {
+    padding: 15px 30px;
+    background: #ff8000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #e67300;
+}
+
+.hero-right img {
+    width: 450px;
+    border-radius: 20px;
+}
+
+/* ===============================
+   MODERN CARDS
+================================= */
+.section {
+    padding: 80px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: #ff8000;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card-modern {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.card-modern:hover {
+    transform: translateY(-10px);
+    background: #262626;
+}
+
+.card-modern h3 {
+    color: #ff8000;
+}
+
+/* ===============================
+   DASHBOARD CARDS
+================================= */
+.card {
+    background: #1e1e1e;
+    padding: 20px;
+    margin: 5px auto 30px auto;
+    width: 80%;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #262626;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+button {
+    background: #ff8000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e67300;
+}
+
+/* ===============================
+   LOGIN / REGISTER BOX
+================================= */
+.login-box {
+    background: #1e1e1e;
+    width: 380px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+}
+
+.login-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff8000;
+}
+
+/* FLOATING LABELS */
+.input-group {
+    position: relative;
+}
+
+.input-group label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #888;
+    background: #1e1e1e;
+    padding: 0 5px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 12px;
+    color: #ff8000;
+}
+
+/* PASSWORD TOGGLE */
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+.security-footer {
+    text-align: center;
+    padding: 20px;
+    background: #1c1c1c;
+    color: #aaa;
+}
+
+/* ===============================
+   RESTAURANT GRID FIX
+================================= */
+
+.restaurant-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 40px;
+}
+
+.restaurant-card {
+    width: 280px;   /* Control card width */
+}
+
+.restaurant-img {
+    width: 100%;
+    height: 160px;   /* Make image smaller */
+    object-fit: cover;
+    border-radius: 12px;
+}

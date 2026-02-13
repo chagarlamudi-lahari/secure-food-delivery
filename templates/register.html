@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<h2>📝 Create Secure Account</h2>
+
+<div class="login-box">
+    <form method="POST">
+
+        <div class="input-group">
+            <input type="text" name="username" required>
+            <label>Username</label>
+        </div>
+
+        <div class="input-group">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+        </div>
+
+        <div class="input-group password-group">
+            <input type="password" name="password" id="password" required>
+            <label>Password</label>
+            <span class="toggle-password" onclick="togglePassword()">👁</span>
+        </div>
+
+        <div id="strength-message"></div>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script>
+const password = document.getElementById("password");
+const message = document.getElementById("strength-message");
+
+password.addEventListener("input", function() {
+    const val = password.value;
+    let strength = "Weak";
+    let color = "red";
+
+    if (val.length > 8 && /[A-Z]/.test(val) && /[0-9]/.test(val)) {
+        strength = "Strong";
+        color = "green";
+    } else if (val.length >= 6) {
+        strength = "Medium";
+        color = "orange";
+    }
+
+    message.textContent = "Password Strength: " + strength;
+    message.style.color = color;
+});
+
+function togglePassword() {
+    const pwd = document.getElementById("password");
+    if (pwd.type === "password") {
+        pwd.type = "text";
+    } else {
+        pwd.type = "password";
+    }
+}
+</script>
+
+
+{% endblock %}
